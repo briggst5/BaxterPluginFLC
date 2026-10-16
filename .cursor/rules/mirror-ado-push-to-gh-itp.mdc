@@ -1,0 +1,22 @@
+---
+description: After every push to the ado remote, push the same branches to gh-itp.
+alwaysApply: true
+---
+
+# Mirror ado pushes to gh-itp
+
+When you push branches to the `ado` remote, push those same branches to `gh-itp` in the same turn.
+
+- `ado`: `https://dev.azure.com/FrontLineCare/Tools/_git/baxter-plugins`
+- `gh-itp`: `https://github.com/Hillrom-Enterprise/novum-cursor-plugins.git`
+
+Push only the branch refs that were just sent to `ado`. Leave remote-tracking refs (`refs/remotes/*`) local.
+
+```bash
+git push ado <branch>
+git push gh-itp <branch>
+```
+
+Do not use `git push --mirror`. That publishes remote-tracking refs and deletes branches on `gh-itp` that are not present locally.
+
+If `gh-itp` rejects the update because it is not a fast-forward, stop and report the divergence. Do not force-push unless the user explicitly says to overwrite `gh-itp` history.
