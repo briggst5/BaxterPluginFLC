@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "vs100-knowledge": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "-e",
+        "const fs=require('fs'),os=require('os'),path=require('path');function xp(s){s=s.replace(/%([A-Za-z0-9_]+)%/g,(_,n)=>process.env[n]||'').replace(/\\$\\{([A-Za-z0-9_]+)\\}/g,(_,n)=>process.env[n]||'');if(s.charAt(0)==='~')s=os.homedir()+s.slice(1);return s;}let r=process.env.PLUGIN_ROOT||process.env.VS100_PLUGIN_DIR;if(!r){try{const m=fs.readFileSync(path.join(os.homedir(),'.config','vs100-knowledge-mcp.env'),'utf8').match(/^VS100_PLUGIN_DIR=(.+)$/m);if(m)r=m[1].trim();}catch(e){}}if(!r){console.error('VS100 MCP: set VS100_PLUGIN_DIR in ~/.config/vs100-knowledge-mcp.env');process.exit(1);}r=xp(r);if(!path.isAbsolute(r))r=path.join(os.homedir(),r);import(require('url').pathToFileURL(path.join(r,'scripts','launch-vs100-knowledge-mcp.mjs')).href);"
+      ]
+    }
+  }
+}

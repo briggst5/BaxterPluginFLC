@@ -1,0 +1,21 @@
+trigger: none
+
+pr:
+  branches:
+    include:
+      - main
+      - master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - checkout: self
+    persistCredentials: true
+    fetchDepth: 0
+
+  - script: |
+      chmod +x scripts/validate-plugin.sh
+      ./scripts/validate-plugin.sh
+    displayName: Validate plugin manifests
+    workingDirectory: $(Build.SourcesDirectory)

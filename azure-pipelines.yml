@@ -1,0 +1,49 @@
+# Marketplace plugin consistency check (PR + main).
+# In Azure DevOps: Pipelines → New → Existing Azure Pipelines YAML file → this path.
+# Then: Project settings → Repositories → Policies → require this build on PRs to main.
+
+trigger:
+  branches:
+    include:
+      - main
+      - master
+
+pr:
+  branches:
+    include:
+      - main
+      - master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - checkout: self
+    displayName: Checkout
+
+  - bash: |
+      set -euo pipefail
+      curl -LsSf https://astral.sh/uv/install.sh | sh
+      echo "##vso[task.prependpath]$HOME/.local/bin"
+    displayName: Install uv
+
+  - bash: |
+      set -euo pipefail
+      chmod +x scripts/*.sh
+      if compgen -G "plugins/*/scripts/*.sh" > /dev/null; then
+        chmod +x plugins/*/scripts/*.sh
+      fi
+      ./scripts/validate-plugin.sh
+    displayName: Validate marketplace plugins
+
+  - bash: |
+      set -euo pipefail
+      shopt -s nullglob
+      for server_dir in plugins/*/mcp-servers/*/; do
+        if [[ -f "${server_dir}pyproject.toml" ]]; then
+          echo "==> Smoke test ${server_dir}"
+          uv sync --directory "${server_dir}"
+          timeout 5 uv --directory "${server_dir}" run python -c "import server; print('import ok')"
+        fi
+      done
+    displayName: Smoke test Python MCP servers

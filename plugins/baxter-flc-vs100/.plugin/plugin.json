@@ -1,0 +1,11 @@
+{
+  "name": "baxter-flc-vs100",
+  "description": "VS100 application and image build knowledge: codebase navigation, device theory of operation, NIR refractive algorithms, EnsureIT security integration, and Yocto image build pipeline.",
+  "version": "0.2.2",
+  "author": {
+    "name": "Baxter FLC Engineering"
+  },
+  "license": "MIT",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.copilot.json"
+}

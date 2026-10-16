@@ -1,0 +1,23 @@
+{
+  "name": "baxter-gqp",
+  "displayName": "Baxter GQP Knowledge",
+  "version": "0.5.0",
+  "description": "GQP/GQT document knowledge via the hosted gqp-knowledge MCP, with compliance advisor skills and citation rules. No local binary or sign-in required.",
+  "author": {
+    "name": "Baxter Engineering"
+  },
+  "license": "MIT",
+  "keywords": [
+    "baxter",
+    "gqp",
+    "gqt",
+    "qms",
+    "compliance",
+    "mcp",
+    "rag"
+  ],
+  "rules": "./rules",
+  "skills": "./skills",
+  "agents": "./agents",
+  "mcpServers": "./.mcp.json"
+}

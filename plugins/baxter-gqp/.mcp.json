@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "gqp-knowledge": {
+      "url": "https://gqpmcp-nonprod-app.whitegrass-2cc28a92.westus3.azurecontainerapps.io/mcp",
+      "headers": {
+        "Authorization": "Bearer lhdpHDZ7-Ls8AiPXhrSO1lAkRj1ccsACuywwzNALNSs"
+      }
+    }
+  }
+}

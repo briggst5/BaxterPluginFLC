@@ -1,0 +1,19 @@
+{
+  "name": "baxter-flc-tools",
+  "displayName": "Baxter FLC Tools",
+  "version": "0.1.0",
+  "description": "FLC Tools SAP document knowledge with Azure AI Search-backed MCP retrieval for Cursor and VS Code.",
+  "author": {
+    "name": "Baxter FLC Engineering"
+  },
+  "license": "MIT",
+  "keywords": [
+    "baxter",
+    "flc",
+    "tools",
+    "sap",
+    "knowledge"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}

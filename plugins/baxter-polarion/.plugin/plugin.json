@@ -1,0 +1,10 @@
+{
+  "name": "baxter-polarion",
+  "description": "Vendored Polarion MCP server with cross-platform Linux, Windows, and macOS launchers. Credentials via ~/.config/polarion-mcp.env.",
+  "version": "0.2.3",
+  "author": {
+    "name": "Baxter Engineering"
+  },
+  "license": "MIT",
+  "mcpServers": "./.mcp.copilot.json"
+}

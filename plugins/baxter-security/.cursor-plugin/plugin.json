@@ -1,0 +1,17 @@
+{
+  "name": "baxter-security",
+  "displayName": "Baxter Security",
+  "version": "0.2.0",
+  "description": "Security domain plugin: CVE/NVD triage, CWE analysis, SBOM review, KEV tracking, and threat modeling skills.",
+  "author": {
+    "name": "Baxter Engineering"
+  },
+  "license": "MIT",
+  "keywords": [
+    "baxter",
+    "security",
+    "review"
+  ],
+  "skills": "./skills/",
+  "agents": "./agents/"
+}

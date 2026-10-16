@@ -1,0 +1,20 @@
+{
+  "name": "baxter-core",
+  "displayName": "Baxter Core",
+  "version": "0.1.2",
+  "description": "Required Baxter baseline: org standards, core skills, and shared agents for all engineers.",
+  "author": {
+    "name": "Baxter Engineering"
+  },
+  "license": "MIT",
+  "keywords": [
+    "baxter",
+    "core",
+    "mcp",
+    "skills",
+    "standards"
+  ],
+  "skills": "./skills/",
+  "rules": "./rules/",
+  "agents": "./agents/"
+}

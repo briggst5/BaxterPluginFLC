@@ -1,0 +1,20 @@
+{
+  "name": "baxter-flc-vs100",
+  "displayName": "Baxter FLC VS100",
+  "version": "0.2.2",
+  "description": "VS100 application and image build knowledge with Azure AI Search-backed MCP retrieval for Cursor and VS Code.",
+  "author": {
+    "name": "Baxter FLC Engineering"
+  },
+  "license": "MIT",
+  "keywords": [
+    "baxter",
+    "flc",
+    "vs100",
+    "refractive",
+    "yocto",
+    "ensureit"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}

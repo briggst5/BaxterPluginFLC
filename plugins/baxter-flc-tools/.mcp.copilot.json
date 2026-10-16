@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "flc-tools-knowledge": {
+      "command": "node",
+      "args": [
+        "${PLUGIN_ROOT}/scripts/launch-flc-tools-knowledge-mcp.mjs"
+      ]
+    }
+  }
+}

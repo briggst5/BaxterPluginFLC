@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "vs100-knowledge": {
+      "command": "node",
+      "args": [
+        "${PLUGIN_ROOT}/scripts/launch-vs100-knowledge-mcp.mjs"
+      ]
+    }
+  }
+}

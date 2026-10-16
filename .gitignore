@@ -1,0 +1,14 @@
+.sync-workdir/
+__pycache__/
+*.py[cod]
+.venv/
+.venv-baxter/
+plugins/baxter-ux/design-system/.crawl/
+.baxter-bootstrap-complete
+plugins/**/mcp-servers/**/build/
+plugins/baxter-flc-tools/bin/
+plugins/baxter-flc-vs100/bin/
+plugins/baxter-polarion/bin/
+.env
+.env.*
+!.env.example
